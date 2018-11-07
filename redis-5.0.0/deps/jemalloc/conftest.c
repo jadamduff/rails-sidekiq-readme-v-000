@@ -72,3 +72,42 @@
 #define JEMALLOC_USE_SYSCALL  
 #define JEMALLOC_HAVE_SECURE_GETENV  
 #define JEMALLOC_HAVE_SCHED_GETCPU  
+/* end confdefs.h.  */
+/* Define sched_setaffinity to an innocuous variant, in case <limits.h> declares sched_setaffinity.
+   For example, HP-UX 11i <limits.h> declares gettimeofday.  */
+#define sched_setaffinity innocuous_sched_setaffinity
+
+/* System header to define __stub macros and hopefully few prototypes,
+    which can conflict with char sched_setaffinity (); below.
+    Prefer <limits.h> to <assert.h> if __STDC__ is defined, since
+    <limits.h> exists even on freestanding compilers.  */
+
+#ifdef __STDC__
+# include <limits.h>
+#else
+# include <assert.h>
+#endif
+
+#undef sched_setaffinity
+
+/* Override any GCC internal prototype to avoid an error.
+   Use char because int might match the return type of a GCC
+   builtin and then its argument prototype would still apply.  */
+#ifdef __cplusplus
+extern "C"
+#endif
+char sched_setaffinity ();
+/* The GNU C library defines this for functions which it implements
+    to always fail with ENOSYS.  Some functions are actually named
+    something starting with __ and the normal name is an alias.  */
+#if defined __stub_sched_setaffinity || defined __stub___sched_setaffinity
+choke me
+#endif
+
+int
+main ()
+{
+return sched_setaffinity ();
+  ;
+  return 0;
+}
